@@ -1,7 +1,6 @@
-﻿namespace StripePaymentExample.Settings
+﻿namespace StripePaymentExample.Settings;
+
+public class StripeSetting
 {
-    public class StripeSetting
-    {
-        public string? SecretKey { get; set; }
-    }
+    public string? SecretKey { get; set; }
 }
