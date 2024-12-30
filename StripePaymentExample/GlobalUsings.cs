@@ -1,5 +1,3 @@
 ﻿namespace StripePaymentExample;
 
-public class GlobalUsings
-{
-}
+public class GlobalUsings { }
