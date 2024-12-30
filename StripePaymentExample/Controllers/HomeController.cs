@@ -1,5 +1,3 @@
-global using System.Diagnostics;
-
 namespace StripePaymentExample.Controllers;
 
 public class HomeController : Controller
