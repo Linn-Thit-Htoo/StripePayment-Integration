@@ -1,6 +1,6 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
-global using Stripe.Checkout;
 global using Stripe;
+global using Stripe.Checkout;
 global using StripePaymentExample.Models;
 
 namespace StripePaymentExample.Controllers;
@@ -10,6 +10,7 @@ namespace StripePaymentExample.Controllers;
 public class CheckoutController : Controller
 {
     private readonly IConfiguration _configuration;
+
     public CheckoutController(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -23,22 +24,22 @@ public class CheckoutController : Controller
         {
             PaymentMethodTypes = new List<string> { "card" },
             LineItems = new List<SessionLineItemOptions>
-        {
-            new SessionLineItemOptions
             {
-                PriceData = new SessionLineItemPriceDataOptions
+                new SessionLineItemOptions
                 {
-                    Currency = model.Currency,
-                    ProductData = new SessionLineItemPriceDataProductDataOptions
+                    PriceData = new SessionLineItemPriceDataOptions
                     {
-                        Name = model.ProductName,
-                        Description = model.ProductDescription,
+                        Currency = model.Currency,
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = model.ProductName,
+                            Description = model.ProductDescription,
+                        },
+                        UnitAmount = model.Amount,
                     },
-                    UnitAmount = model.Amount,
+                    Quantity = 1,
                 },
-                Quantity = 1,
             },
-        },
             Mode = "payment",
             SuccessUrl = $"{Request.Scheme}://{Request.Host}/checkout/success",
             CancelUrl = $"{Request.Scheme}://{Request.Host}/checkout/cancel",
