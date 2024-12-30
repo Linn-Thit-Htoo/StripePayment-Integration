@@ -1,4 +1,4 @@
-using System.Diagnostics;
+global using System.Diagnostics;
 
 namespace StripePaymentExample.Controllers;
 
