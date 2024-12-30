@@ -1,6 +1,4 @@
-﻿global using Microsoft.AspNetCore.Mvc;
-
-namespace StripePaymentExample.Controllers;
+﻿namespace StripePaymentExample.Controllers;
 
 [ApiController]
 [Route("[controller]")]
