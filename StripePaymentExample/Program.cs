@@ -1,4 +1,4 @@
-using StripePaymentExample.Settings;
+global using StripePaymentExample.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
