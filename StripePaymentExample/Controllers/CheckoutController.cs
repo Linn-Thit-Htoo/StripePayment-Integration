@@ -1,7 +1,6 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
 global using Stripe;
 global using Stripe.Checkout;
-global using StripePaymentExample.Models;
 
 namespace StripePaymentExample.Controllers;
 
