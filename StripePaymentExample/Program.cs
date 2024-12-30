@@ -1,4 +1,3 @@
-using Stripe;
 using StripePaymentExample.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
