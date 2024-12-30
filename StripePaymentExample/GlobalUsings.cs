@@ -3,3 +3,4 @@ global using StripePaymentExample.Models;
 global using Stripe;
 global using Microsoft.AspNetCore.Mvc;
 global using System.Diagnostics;
+global using StripePaymentExample.Settings;
