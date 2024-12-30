@@ -1,5 +1,4 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
-global using Stripe;
 
 namespace StripePaymentExample.Controllers;
 
