@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using StripePaymentExample.Models;
 using System.Diagnostics;
 
 namespace StripePaymentExample.Controllers;
