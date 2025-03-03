@@ -12,6 +12,19 @@ builder
 builder.Services.Configure<StripeSetting>(builder.Configuration.GetSection("Stripe"));
 StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "CORSPolicy",
+        builder =>
+            builder
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+                .SetIsOriginAllowed((hosts) => true)
+    );
+});
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -23,6 +36,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CORSPolicy");
+
 app.UseStaticFiles();
 
 app.UseRouting();

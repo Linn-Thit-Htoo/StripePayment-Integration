@@ -36,8 +36,10 @@ public class CheckoutController : Controller
                 },
             },
             Mode = "payment",
-            SuccessUrl = $"{Request.Scheme}://{Request.Host}/checkout/success",
-            CancelUrl = $"{Request.Scheme}://{Request.Host}/checkout/cancel",
+            //SuccessUrl = $"{Request.Scheme}://{Request.Host}/checkout/success",
+            SuccessUrl = "http://localhost:5173/payment/success",
+            CancelUrl = "http://localhost:5173/payment/fail",
+            //CancelUrl = $"{Request.Scheme}://{Request.Host}/checkout/cancel",
         };
 
         var service = new SessionService();
