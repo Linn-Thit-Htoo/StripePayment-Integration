@@ -29,7 +29,7 @@ const CheckOutPage = () => {
         if (!session.sessionId) {
           throw new Error("Session ID is missing.");
         }
-        return stripe.redirectToCheckout({ sessionId: session.sessionId }); // ✅ Works now
+        return stripe.redirectToCheckout({ sessionId: session.sessionId });
       })
       .then((result) => {
         if (result.error) {
